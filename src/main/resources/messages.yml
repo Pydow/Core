@@ -1,5 +1,5 @@
 prefix: "§8» §eCore §7| "
 
 # /id
-id: "Das Item in deiner Hand hat die ID: [0]"
-#id-secret: "Hä, was willst du denn mit Luft anstellen?"
+id: "ID: [0]:[1]"
+id-secret: "Hä, was willst du denn mit Luft anstellen?"

@@ -23,7 +23,12 @@ public class IDCommand extends PluginCommand<Core> implements CommandFactory {
 
             Item item = player.getInventory().getItemInHand();
 
-            player.sendMessage(Language.getAndReplace("id", item.getId().getName()));
+            if (item.getId().getName().equalsIgnoreCase("air")) {
+                player.sendMessage(Language.get("id-secret"));
+                return false;
+            }
+
+            player.sendMessage(Language.getAndReplace("id", item.getId().getNamespace(), item.getId().getName()));
         }
         return true;
     }
