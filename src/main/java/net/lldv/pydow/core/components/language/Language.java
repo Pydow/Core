@@ -14,7 +14,7 @@ public class Language {
     public static void init() {
         messages.clear();
         Core.getInstance().saveResource("messages.yml");
-        Config m = new Config(Core.getInstance().getDataFolder() + "/messages.yml");
+        Config m = new Config(Core.getInstance().getDataFolder() + "/messages.yml", Config.YAML);
         for (Map.Entry<String, Object> map : m.getAll().entrySet()) {
             String key = map.getKey();
             if (map.getValue() instanceof String) {
