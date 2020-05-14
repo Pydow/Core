@@ -51,3 +51,7 @@ receiver-not-online: "&cDer Empfänger ist nicht mehr online."
 tpa-teleport-to: "&aDu wirst zu &e[0] &ateleportiert."
 tpa-teleport-me: "&e[0] &awird zu dir teleportiert."
 tpa-denied: "&aDu hast die Tpa abgelehnt."
+
+# Join Listener
+player-joined: "§8» §e[0] §7hat den Server betreten."
+player-quit: "§8» §e[0] §7hat den Server verlassen."
