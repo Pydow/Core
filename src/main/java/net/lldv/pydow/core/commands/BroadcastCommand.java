@@ -20,8 +20,7 @@ public class BroadcastCommand extends PluginCommand<Core> implements CommandFact
     public boolean execute(CommandSender sender, String commandLabel, String[] args) {
         if (sender.hasPermission("pydow.core.command.broadcast")) {
             if (args.length >= 1) {
-                String text = "";
-                for (int i = 0; i < args.length; ++i) text = text + args[i] + " ";
+                String text = String.join(" ", args);
                 Server.getInstance().broadcastMessage(text.replace("&", "§"));
             } else sender.sendMessage(Language.getAndReplace("broadcast-usage"));
         } else sender.sendMessage(Language.getAndReplace("no-permission"));
