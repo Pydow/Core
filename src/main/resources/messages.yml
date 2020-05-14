@@ -25,3 +25,29 @@ fly-enabled: "Du kannst nun fliegen."
 fly-disabled-for: "Der Spieler &e[0] &7kann nun nicht mehr fliegen."
 fly-enabled-for: "Der Spieler &e[0] &7kann nun fliegen."
 fly-usage: "Nutze: &e/fly <Spieler>"
+
+# /time
+time-set: "Du hast die Zeit in deiner Welt geändert."
+invalid-time: "&cBitte gebe eine gültige Zeit an."
+time-usage: "Nutze: &e/time <Time>"
+
+# /weather
+weather-set: "Du hast das Wetter in deiner Welt geändert."
+weather-usage: "Nutze: &e/weather <clear|rain|thunder>"
+
+# /broadcast
+broadcast: "Nutze: &e/broadcast <Nachricht>"
+
+# /tpa
+request-sent: "&aDu hast dem Spieler &e[0] &aeine Tpa gesendet."
+request-received: "&aDu hast eine Tpa von &e[0] &aerhalten."
+request-received-info: "Nehme sie mit &a/tpaccept &7an oder lehne sie mit &c/tpdeny &7ab."
+tpa-usage: "Nutze: &e/tpa <Spieler>"
+
+# /tpaccept /tpdeny
+request-expired: "&cDie Anfrage ist bereits abgelaufen."
+no-requests: "&cDu hast keine offenen Anfragen."
+receiver-not-online: "&cDer Empfänger ist nicht mehr online."
+tpa-teleport-to: "&aDu wirst zu &e[0] &ateleportiert."
+tpa-teleport-me: "&e[0] &awird zu dir teleportiert."
+tpa-denied: "&aDu hast die Tpa abgelehnt."
