@@ -1,5 +1,27 @@
-prefix: "§8» §eCore §7| "
+prefix: "§8» §eCore §8| §7"
+no-permission: "&cDazu hast du keine Rechte."
+player-not-online: "§e[0] §7ist nicht online."
 
 # /id
 id: "ID: [0]:[1]"
 id-secret: "Hä, was willst du denn mit Luft anstellen?"
+
+# /gamemode
+gamemode-usage: "Nutze: &e/gamemode <0|1|2|3> <Spieler>"
+invalid-gamemode: "&cDieser Gamemode existiert nicht. &7(0-3)"
+gamemode-set-own: "Du bist nun im &eGamemode [0]§7."
+gamemode-set-other: "Der Spieler &e[1] &7ist nun im §eGamemode [0]&7."
+
+# /teleport
+teleport-to-1: "Du wurdest zu &e[0] &7teleportiert."
+teleport-to-2: "Der Spieler &e[0] &7wurde zu &e[1] &7teleportiert."
+teleported: "Du wurdest teleportiert."
+invalid-coordinates: "&cBitte gebe gültige Koordinaten an."
+teleport-usage: "Nutze: &e/teleport <Spieler> <Spieler>"
+
+# /fly
+fly-disabled: "Du kannst nun nicht mehr fliegen."
+fly-enabled: "Du kannst nun fliegen."
+fly-disabled-for: "Der Spieler &e[0] &7kann nun nicht mehr fliegen."
+fly-enabled-for: "Der Spieler &e[0] &7kann nun fliegen."
+fly-usage: "Nutze: &e/fly <Spieler>"
