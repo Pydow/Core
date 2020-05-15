@@ -4,6 +4,8 @@ import cn.nukkit.command.Command;
 import cn.nukkit.command.CommandFactory;
 import cn.nukkit.command.CommandSender;
 import cn.nukkit.command.PluginCommand;
+import cn.nukkit.command.data.CommandParamType;
+import cn.nukkit.command.data.CommandParameter;
 import cn.nukkit.player.Player;
 import net.lldv.pydow.core.Core;
 import net.lldv.pydow.core.components.language.Language;
@@ -13,6 +15,7 @@ public class TimeCommand extends PluginCommand<Core> implements CommandFactory {
     public TimeCommand(String name, Core owner) {
         super(name, owner);
         setDescription("Änder die Zeit in deiner Welt");
+        commandParameters.add(new CommandParameter[]{new CommandParameter("time", CommandParamType.INT, false)});
     }
 
     @Override

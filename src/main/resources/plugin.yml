@@ -1,5 +1,8 @@
 name: "Core"
-version: 1.0.0
+version: 1.0.0-SNAPSHOT
 api: 2.0.0
 main: net.lldv.pydow.core.Core
-description: "Core"
+authors:
+  - Proxma
+  - Mundschutziii
+description: "Pydow Core"

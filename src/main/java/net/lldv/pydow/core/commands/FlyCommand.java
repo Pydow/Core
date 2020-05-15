@@ -5,6 +5,8 @@ import cn.nukkit.command.Command;
 import cn.nukkit.command.CommandFactory;
 import cn.nukkit.command.CommandSender;
 import cn.nukkit.command.PluginCommand;
+import cn.nukkit.command.data.CommandParamType;
+import cn.nukkit.command.data.CommandParameter;
 import cn.nukkit.player.Player;
 import net.lldv.pydow.core.Core;
 import net.lldv.pydow.core.components.language.Language;
@@ -14,6 +16,7 @@ public class FlyCommand extends PluginCommand<Core> implements CommandFactory {
     public FlyCommand(String name, Core owner) {
         super(name, owner);
         setDescription("Fliege wie ein Schmetterling durch die Luft");
+        commandParameters.add(new CommandParameter[]{new CommandParameter("player", CommandParamType.TARGET, false)});
     }
 
     @Override
@@ -28,8 +31,12 @@ public class FlyCommand extends PluginCommand<Core> implements CommandFactory {
                     player.setAllowFlight(true);
                     player.sendMessage(Language.getAndReplace("fly-enabled"));
                 }
-            } else if (args.length == 1) {
+            } else if (args.length == 1 && sender.hasPermission("pydow.core.command.fly.others")) {
                 Player player = Server.getInstance().getPlayer(args[0]);
+                if (player == null) {
+                    sender.sendMessage(Language.getAndReplace("player-not-online", args[0]));
+                    return true;
+                }
                 if (player.getAllowFlight()) {
                     player.setAllowFlight(false);
                     player.sendMessage(Language.getAndReplace("fly-disabled"));

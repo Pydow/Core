@@ -5,6 +5,8 @@ import cn.nukkit.command.Command;
 import cn.nukkit.command.CommandFactory;
 import cn.nukkit.command.CommandSender;
 import cn.nukkit.command.PluginCommand;
+import cn.nukkit.command.data.CommandParamType;
+import cn.nukkit.command.data.CommandParameter;
 import cn.nukkit.player.Player;
 import net.lldv.pydow.core.Core;
 import net.lldv.pydow.core.components.data.TpaData;
@@ -15,6 +17,7 @@ public class TpaCommand extends PluginCommand<Core> implements CommandFactory {
     public TpaCommand(String name, Core owner) {
         super(name, owner);
         setDescription("Sende eine Teleportationsanfrage an einen Spieler");
+        commandParameters.add(new CommandParameter[]{new CommandParameter("player", CommandParamType.TARGET, false)});
     }
 
     @Override

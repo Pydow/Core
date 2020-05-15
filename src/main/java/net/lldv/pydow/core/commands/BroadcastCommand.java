@@ -5,6 +5,8 @@ import cn.nukkit.command.Command;
 import cn.nukkit.command.CommandFactory;
 import cn.nukkit.command.CommandSender;
 import cn.nukkit.command.PluginCommand;
+import cn.nukkit.command.data.CommandParamType;
+import cn.nukkit.command.data.CommandParameter;
 import net.lldv.pydow.core.Core;
 import net.lldv.pydow.core.components.language.Language;
 
@@ -14,6 +16,7 @@ public class BroadcastCommand extends PluginCommand<Core> implements CommandFact
         super(name, owner);
         setDescription("Schreibe eine wichtige Info an alle Spieler");
         setAliases(new String[]{"bc", "b", "info"});
+        commandParameters.add(new CommandParameter[]{new CommandParameter("message", CommandParamType.TEXT, false)});
     }
 
     @Override

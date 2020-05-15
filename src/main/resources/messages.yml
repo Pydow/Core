@@ -52,6 +52,22 @@ tpa-teleport-to: "&aDu wirst zu &e[0] &ateleportiert."
 tpa-teleport-me: "&e[0] &awird zu dir teleportiert."
 tpa-denied: "&aDu hast die Tpa abgelehnt."
 
+# /vanish
+vanish-enabled: "Du bist nun im Vanish."
+vanish-disabled: "Du bist nun nicht mehr im Vanish."
+vanished-other: "&e[0] &7ist nun im Vanish."
+player-show: "Du und &e[0] &7seht euch nun gegenseitig."
+player-spy: "Du siehst nun &e[0]&7."
+player-not-vanished: "Dieser Spieler ist nicht im Vanish."
+vanish-usage: "Nutze: &e/vanish <Player>"
+
+# /msg /reply
+msg-to: "§8» §eMsg §8| §eMir §8-> &e[2] §8» &7[0]"
+msg-from: "§8» §eMsg §8| §e[2] §8-> &eMir §8» &7[0]"
+msg-usage: "Nutze: &e/msg <Spieler> <Nachricht>"
+nobody-to-reply: "&cDu hast niemanden, den du antworten kannst."
+reply-usage: "Nutze: &e/r <Nachricht>"
+
 # Join Listener
 player-joined: "§8» §e[0] §7hat den Server betreten."
 player-quit: "§8» §e[0] §7hat den Server verlassen."

@@ -28,6 +28,7 @@ public class Core extends PluginBase {
         cr.unregister(this, "tp");
         cr.unregister(this, "time");
         cr.unregister(this, "weather");
+        cr.unregister(this, "tell");
         cr.register(this, "id", new IDCommand("id", this));
         cr.register(this, "gamemode", new GamemodeCommand("gamemode", this));
         cr.register(this, "teleport", new TeleportCommand("teleport", this));
@@ -38,6 +39,9 @@ public class Core extends PluginBase {
         cr.register(this, "tpa", new TpaCommand("tpa", this));
         cr.register(this, "tpaccept", new TpacceptCommand("tpaccept", this));
         cr.register(this, "tpdeny", new TpdenyCommand("tpdeny", this));
+        cr.register(this, "vanish", new VanishCommand("vanish", this));
+        cr.register(this, "msg", new MsgCommand("msg", this));
+        cr.register(this, "reply", new ReplyCommand("reply", this));
     }
 
 

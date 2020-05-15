@@ -5,6 +5,8 @@ import cn.nukkit.command.Command;
 import cn.nukkit.command.CommandFactory;
 import cn.nukkit.command.CommandSender;
 import cn.nukkit.command.PluginCommand;
+import cn.nukkit.command.data.CommandParamType;
+import cn.nukkit.command.data.CommandParameter;
 import cn.nukkit.level.Location;
 import cn.nukkit.player.Player;
 import net.lldv.pydow.core.Core;
@@ -16,6 +18,9 @@ public class TeleportCommand extends PluginCommand<Core> implements CommandFacto
         super(name, owner);
         setAliases(new String[]{"tp"});
         setDescription("Teleportiere dich zu einem Spieler oder einer Position");
+        commandParameters.add(new CommandParameter[]{new CommandParameter("player", CommandParamType.TARGET, false)});
+        commandParameters.add(new CommandParameter[]{new CommandParameter("player", CommandParamType.TARGET, false), new CommandParameter("target", CommandParamType.TARGET, false)});
+        commandParameters.add(new CommandParameter[]{new CommandParameter("x", CommandParamType.INT, false), new CommandParameter("y", CommandParamType.INT, false), new CommandParameter("z", CommandParamType.INT, false)});
     }
 
     @Override
