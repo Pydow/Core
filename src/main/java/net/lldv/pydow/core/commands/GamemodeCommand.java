@@ -1,8 +1,6 @@
 package net.lldv.pydow.core.commands;
 
 import cn.nukkit.Server;
-import cn.nukkit.command.Command;
-import cn.nukkit.command.CommandFactory;
 import cn.nukkit.command.CommandSender;
 import cn.nukkit.command.PluginCommand;
 import cn.nukkit.command.data.CommandParamType;
@@ -10,20 +8,21 @@ import cn.nukkit.command.data.CommandParameter;
 import cn.nukkit.player.Player;
 import net.lldv.pydow.core.Core;
 import net.lldv.pydow.core.components.language.Language;
+import net.lldv.pydow.core.components.tools.Command;
 
-public class GamemodeCommand extends PluginCommand<Core> implements CommandFactory {
+public class GamemodeCommand extends PluginCommand<Core> {
 
-    public GamemodeCommand(String name, Core owner) {
-        super(name, owner);
-        setAliases(new String[]{"gm", "gammelmode"});
-        setDescription("Änder deinen Spielmodus");
-        commandParameters.add(new CommandParameter[]{new CommandParameter("player", false, new String[]{"0", "1", "2", "3"})});
-        commandParameters.add(new CommandParameter[]{new CommandParameter("player", false, new String[]{"0", "1", "2", "3"}), new CommandParameter("player", CommandParamType.TARGET, false)});
+    public GamemodeCommand(Core owner) {
+        super(owner, Command.create("gamemode", "Gammel in verschiedenen Gamemodes herum :~D",
+                new String[]{"pydow.core.command.gamemode"},
+                new String[]{"gm", "gammelmode"},
+                new CommandParameter[]{new CommandParameter("player", false, new String[]{"0", "1", "2", "3"}),
+                        new CommandParameter("player", false, new String[]{"0", "1", "2", "3"}), new CommandParameter("player", CommandParamType.TARGET, false)}));
     }
 
     @Override
     public boolean execute(CommandSender sender, String commandLabel, String[] args) {
-        if (sender.hasPermission("pydow.core.command.gamemode")) {
+        if (sender.hasPermission(getPermissions().get(0))) {
             if (args.length == 1 && sender instanceof Player) {
                 Player player = (Player) sender;
                 try {
@@ -57,10 +56,5 @@ public class GamemodeCommand extends PluginCommand<Core> implements CommandFacto
             } else sender.sendMessage(Language.getAndReplace("gamemode-usage"));
         } else sender.sendMessage(Language.getAndReplace("no-permission"));
         return true;
-    }
-
-    @Override
-    public Command create(String s) {
-        return this;
     }
 }

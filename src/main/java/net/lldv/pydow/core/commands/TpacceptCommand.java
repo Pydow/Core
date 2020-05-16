@@ -1,19 +1,17 @@
 package net.lldv.pydow.core.commands;
 
-import cn.nukkit.command.Command;
-import cn.nukkit.command.CommandFactory;
 import cn.nukkit.command.CommandSender;
 import cn.nukkit.command.PluginCommand;
 import cn.nukkit.player.Player;
 import net.lldv.pydow.core.Core;
 import net.lldv.pydow.core.components.data.TpaData;
 import net.lldv.pydow.core.components.language.Language;
+import net.lldv.pydow.core.components.tools.Command;
 
-public class TpacceptCommand extends PluginCommand<Core> implements CommandFactory {
+public class TpacceptCommand extends PluginCommand<Core> {
 
-    public TpacceptCommand(String name, Core owner) {
-        super(name, owner);
-        setDescription("Nimm eine Teleportationsanfrage an");
+    public TpacceptCommand(Core owner) {
+        super(owner, Command.create("tpaccept", "Nimm eine Teleportationsanfrage an"));
     }
 
     @Override
@@ -36,10 +34,5 @@ public class TpacceptCommand extends PluginCommand<Core> implements CommandFacto
             } else player.sendMessage(Language.getAndReplace("no-requests"));
         }
         return true;
-    }
-
-    @Override
-    public Command create(String s) {
-        return this;
     }
 }

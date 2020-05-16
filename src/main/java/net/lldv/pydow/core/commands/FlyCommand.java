@@ -1,8 +1,6 @@
 package net.lldv.pydow.core.commands;
 
 import cn.nukkit.Server;
-import cn.nukkit.command.Command;
-import cn.nukkit.command.CommandFactory;
 import cn.nukkit.command.CommandSender;
 import cn.nukkit.command.PluginCommand;
 import cn.nukkit.command.data.CommandParamType;
@@ -10,18 +8,20 @@ import cn.nukkit.command.data.CommandParameter;
 import cn.nukkit.player.Player;
 import net.lldv.pydow.core.Core;
 import net.lldv.pydow.core.components.language.Language;
+import net.lldv.pydow.core.components.tools.Command;
 
-public class FlyCommand extends PluginCommand<Core> implements CommandFactory {
+public class FlyCommand extends PluginCommand<Core> {
 
-    public FlyCommand(String name, Core owner) {
-        super(name, owner);
-        setDescription("Fliege wie ein Schmetterling durch die Luft");
-        commandParameters.add(new CommandParameter[]{new CommandParameter("player", CommandParamType.TARGET, false)});
+    public FlyCommand(Core owner) {
+        super(owner, Command.create("fly", "Fliege wie ein Schmetterling durch die Luft",
+                new String[]{"pydow.core.command.fly"},
+                new String[]{},
+                new CommandParameter[]{new CommandParameter("player", CommandParamType.TARGET, false)}));
     }
 
     @Override
     public boolean execute(CommandSender sender, String commandLabel, String[] args) {
-        if (sender.hasPermission("pydow.core.command.fly")) {
+        if (sender.hasPermission(getPermissions().get(0))) {
             if (args.length == 0 && sender instanceof Player) {
                 Player player = (Player) sender;
                 if (player.getAllowFlight()) {
@@ -49,10 +49,5 @@ public class FlyCommand extends PluginCommand<Core> implements CommandFactory {
             } else sender.sendMessage(Language.getAndReplace("fly-usage"));
         } else sender.sendMessage(Language.getAndReplace("no-permission"));
         return true;
-    }
-
-    @Override
-    public Command create(String s) {
-        return this;
     }
 }

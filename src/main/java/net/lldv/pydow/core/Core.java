@@ -29,19 +29,20 @@ public class Core extends PluginBase {
         cr.unregister(this, "time");
         cr.unregister(this, "weather");
         cr.unregister(this, "tell");
-        cr.register(this, "id", new IDCommand("id", this));
-        cr.register(this, "gamemode", new GamemodeCommand("gamemode", this));
-        cr.register(this, "teleport", new TeleportCommand("teleport", this));
-        cr.register(this, "fly", new FlyCommand("fly", this));
-        cr.register(this, "time", new TimeCommand("time", this));
-        cr.register(this, "weather", new WeatherCommand("weather", this));
-        cr.register(this, "broadcast", new BroadcastCommand("broadcast", this));
-        cr.register(this, "tpa", new TpaCommand("tpa", this));
-        cr.register(this, "tpaccept", new TpacceptCommand("tpaccept", this));
-        cr.register(this, "tpdeny", new TpdenyCommand("tpdeny", this));
-        cr.register(this, "vanish", new VanishCommand("vanish", this));
-        cr.register(this, "msg", new MsgCommand("msg", this));
-        cr.register(this, "reply", new ReplyCommand("reply", this));
+        cr.register(this, new IDCommand(this));
+        cr.register(this, new GamemodeCommand(this));
+        cr.register(this, new TeleportCommand(this));
+        cr.register(this, new FlyCommand(this));
+        cr.register(this, new TimeCommand(this));
+        cr.register(this, new WeatherCommand(this));
+        cr.register(this, new BroadcastCommand(this));
+        cr.register(this, new TpaCommand(this));
+        cr.register(this, new TpacceptCommand(this));
+        cr.register(this, new TpdenyCommand(this));
+        cr.register(this, new VanishCommand(this));
+        cr.register(this, new MsgCommand(this));
+        cr.register(this, new ReplyCommand(this));
+        cr.register(this, new TeamchatCommand(this));
     }
 
 

@@ -1,8 +1,6 @@
 package net.lldv.pydow.core.commands;
 
 import cn.nukkit.Server;
-import cn.nukkit.command.Command;
-import cn.nukkit.command.CommandFactory;
 import cn.nukkit.command.CommandSender;
 import cn.nukkit.command.PluginCommand;
 import cn.nukkit.command.data.CommandParamType;
@@ -11,14 +9,15 @@ import cn.nukkit.player.Player;
 import net.lldv.pydow.core.Core;
 import net.lldv.pydow.core.components.data.CoreData;
 import net.lldv.pydow.core.components.language.Language;
+import net.lldv.pydow.core.components.tools.Command;
 
-public class MsgCommand extends PluginCommand<Core> implements CommandFactory {
+public class MsgCommand extends PluginCommand<Core> {
 
-    public MsgCommand(String name, Core owner) {
-        super(name, owner);
-        setDescription("Schreibe eine private Nachricht an einen Spieler");
-        setAliases(new String[]{"message"});
-        commandParameters.add(new CommandParameter[]{new CommandParameter("player", CommandParamType.TARGET, false), new CommandParameter("message", CommandParamType.TEXT, false)});
+    public MsgCommand(Core owner) {
+        super(owner, Command.create("msg", "Schreibe eine private Nachricht an einen Spieler",
+                new String[]{},
+                new String[]{"message", "m", "dm", "pn"},
+                new CommandParameter[]{new CommandParameter("player", CommandParamType.TARGET, false), new CommandParameter("message", CommandParamType.TEXT, false)}));
     }
 
     @Override
@@ -27,7 +26,7 @@ public class MsgCommand extends PluginCommand<Core> implements CommandFactory {
             Player player = (Player) sender;
             if (args.length >= 2) {
                 Player target = Server.getInstance().getPlayer(args[0]);
-                if (target == null || CoreData.vanish.contains(target)) {
+                if (target == null || CoreData.vanish.contains(target.getName())) {
                     player.sendMessage(Language.getAndReplace("player-not-online", args[0]));
                     return true;
                 }
@@ -44,10 +43,5 @@ public class MsgCommand extends PluginCommand<Core> implements CommandFactory {
             } else player.sendMessage(Language.getAndReplace("msg-usage"));
         }
         return true;
-    }
-
-    @Override
-    public Command create(String s) {
-        return this;
     }
 }

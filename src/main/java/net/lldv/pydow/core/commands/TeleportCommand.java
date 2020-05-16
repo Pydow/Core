@@ -1,7 +1,6 @@
 package net.lldv.pydow.core.commands;
 
 import cn.nukkit.Server;
-import cn.nukkit.command.Command;
 import cn.nukkit.command.CommandFactory;
 import cn.nukkit.command.CommandSender;
 import cn.nukkit.command.PluginCommand;
@@ -11,16 +10,18 @@ import cn.nukkit.level.Location;
 import cn.nukkit.player.Player;
 import net.lldv.pydow.core.Core;
 import net.lldv.pydow.core.components.language.Language;
+import net.lldv.pydow.core.components.tools.Command;
 
-public class TeleportCommand extends PluginCommand<Core> implements CommandFactory {
+public class TeleportCommand extends PluginCommand<Core> {
 
-    public TeleportCommand(String name, Core owner) {
-        super(name, owner);
-        setAliases(new String[]{"tp"});
-        setDescription("Teleportiere dich zu einem Spieler oder einer Position");
-        commandParameters.add(new CommandParameter[]{new CommandParameter("player", CommandParamType.TARGET, false)});
+    public TeleportCommand(Core owner) {
+        super(owner, Command.create("teleport", "Teleportiere dich zu einem Spieler oder einer Position",
+                new String[]{"pydow.core.command.teleport"},
+                new String[]{"tp"},
+                new CommandParameter[]{new CommandParameter("player", CommandParamType.TARGET, false)}));
+        /*commandParameters.add(new CommandParameter[]{new CommandParameter("player", CommandParamType.TARGET, false)});
         commandParameters.add(new CommandParameter[]{new CommandParameter("player", CommandParamType.TARGET, false), new CommandParameter("target", CommandParamType.TARGET, false)});
-        commandParameters.add(new CommandParameter[]{new CommandParameter("x", CommandParamType.INT, false), new CommandParameter("y", CommandParamType.INT, false), new CommandParameter("z", CommandParamType.INT, false)});
+        commandParameters.add(new CommandParameter[]{new CommandParameter("x", CommandParamType.INT, false), new CommandParameter("y", CommandParamType.INT, false), new CommandParameter("z", CommandParamType.INT, false)});*/
     }
 
     @Override
@@ -57,10 +58,5 @@ public class TeleportCommand extends PluginCommand<Core> implements CommandFacto
             }
         } else sender.sendMessage(Language.getAndReplace("no-permission"));
         return true;
-    }
-
-    @Override
-    public Command create(String s) {
-        return this;
     }
 }

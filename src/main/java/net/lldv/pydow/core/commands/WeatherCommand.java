@@ -1,21 +1,20 @@
 package net.lldv.pydow.core.commands;
 
-import cn.nukkit.command.Command;
-import cn.nukkit.command.CommandFactory;
 import cn.nukkit.command.CommandSender;
 import cn.nukkit.command.PluginCommand;
-import cn.nukkit.command.data.CommandParamType;
 import cn.nukkit.command.data.CommandParameter;
 import cn.nukkit.player.Player;
 import net.lldv.pydow.core.Core;
 import net.lldv.pydow.core.components.language.Language;
+import net.lldv.pydow.core.components.tools.Command;
 
-public class WeatherCommand extends PluginCommand<Core> implements CommandFactory {
+public class WeatherCommand extends PluginCommand<Core> {
 
-    public WeatherCommand(String name, Core owner) {
-        super(name, owner);
-        setDescription("Änder das Wetter in deiner Welt");
-        commandParameters.add(new CommandParameter[]{new CommandParameter("weather", false, new String[]{"clear", "rain", "thunder"})});
+    public WeatherCommand(Core owner) {
+        super(owner, Command.create("weather", "Änder das Wetter in deiner Welt",
+                new String[]{"pydow.core.command.weather"},
+                new String[]{},
+                new CommandParameter[]{new CommandParameter("weather", false, new String[]{"clear", "rain", "thunder"})}));
     }
 
     @Override
@@ -41,10 +40,5 @@ public class WeatherCommand extends PluginCommand<Core> implements CommandFactor
             } else sender.sendMessage(Language.getAndReplace("no-permission"));
         }
         return true;
-    }
-
-    @Override
-    public Command create(String s) {
-        return this;
     }
 }

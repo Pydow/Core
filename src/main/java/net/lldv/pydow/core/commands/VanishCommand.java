@@ -1,7 +1,6 @@
 package net.lldv.pydow.core.commands;
 
 import cn.nukkit.Server;
-import cn.nukkit.command.Command;
 import cn.nukkit.command.CommandFactory;
 import cn.nukkit.command.CommandSender;
 import cn.nukkit.command.PluginCommand;
@@ -11,20 +10,21 @@ import cn.nukkit.player.Player;
 import net.lldv.pydow.core.Core;
 import net.lldv.pydow.core.components.data.CoreData;
 import net.lldv.pydow.core.components.language.Language;
+import net.lldv.pydow.core.components.tools.Command;
 
-public class VanishCommand extends PluginCommand<Core> implements CommandFactory {
+public class VanishCommand extends PluginCommand<Core> {
 
-    public VanishCommand(String name, Core owner) {
-        super(name, owner);
-        setDescription("Mache dich unsichtbar");
-        setAliases(new String[]{"v"});
-        commandParameters.add(new CommandParameter[]{new CommandParameter("player", CommandParamType.TARGET, false)});
+    public VanishCommand(Core owner) {
+        super(owner, Command.create("vanish", "Mache dich unsichtbar",
+                new String[]{"pydow.core.command.vanish"},
+                new String[]{"v"},
+                new CommandParameter[]{new CommandParameter("player", CommandParamType.TARGET, false)}));
     }
 
     @Override
     public boolean execute(CommandSender sender, String commandLabel, String[] args) {
         if (sender instanceof Player) {
-            if (sender.hasPermission("pydow.core.command.vanish")) {
+            if (sender.hasPermission(getPermissions().get(0))) {
                 Player player = (Player) sender;
                 if (args.length == 0) {
                     CoreData.toggleVanish(player);
@@ -39,14 +39,14 @@ public class VanishCommand extends PluginCommand<Core> implements CommandFactory
                 } else if (args.length == 2) {
                     if (args[0].equals("show")) {
                         Player player1 = Server.getInstance().getPlayer(args[1]);
-                        if (CoreData.vanish.contains(player1)) {
+                        if (CoreData.vanish.contains(player1.getName())) {
                             player.showPlayer(player1);
                             player1.showPlayer(player);
                             player.sendMessage(Language.getAndReplace("player-show", player1.getName()));
                         } else player.sendMessage(Language.getAndReplace("player-not-vanished"));
                     } else if (args[0].equals("spy")) {
                         Player player1 = Server.getInstance().getPlayer(args[1]);
-                        if (CoreData.vanish.contains(player1)) {
+                        if (CoreData.vanish.contains(player1.getName())) {
                             player.showPlayer(player1);
                             player.sendMessage(Language.getAndReplace("player-spy", player1.getName()));
                         } else player.sendMessage(Language.getAndReplace("player-not-vanished"));
@@ -55,10 +55,5 @@ public class VanishCommand extends PluginCommand<Core> implements CommandFactory
             } else sender.sendMessage(Language.getAndReplace("no-permission"));
         }
         return true;
-    }
-
-    @Override
-    public Command create(String s) {
-        return this;
     }
 }

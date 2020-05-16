@@ -68,6 +68,10 @@ msg-usage: "Nutze: &e/msg <Spieler> <Nachricht>"
 nobody-to-reply: "&cDu hast niemanden, den du antworten kannst."
 reply-usage: "Nutze: &e/r <Nachricht>"
 
+# /teamchat
+teamchat: "§8» §cTeamchat §8| §7[0] §8» §f[1]"
+teamchat-usage: "Nutze: &e/teamchat <Nachricht>"
+
 # Join Listener
 player-joined: "§8» §e[0] §7hat den Server betreten."
 player-quit: "§8» §e[0] §7hat den Server verlassen."

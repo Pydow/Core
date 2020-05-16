@@ -1,19 +1,17 @@
 package net.lldv.pydow.core.commands;
 
-import cn.nukkit.command.Command;
-import cn.nukkit.command.CommandFactory;
 import cn.nukkit.command.CommandSender;
 import cn.nukkit.command.PluginCommand;
 import cn.nukkit.item.Item;
 import cn.nukkit.player.Player;
 import net.lldv.pydow.core.Core;
 import net.lldv.pydow.core.components.language.Language;
+import net.lldv.pydow.core.components.tools.Command;
 
-public class IDCommand extends PluginCommand<Core> implements CommandFactory {
+public class IDCommand extends PluginCommand<Core> {
 
-    public IDCommand(String name, Core owner) {
-        super(name, owner);
-        setDescription("Zeigt die ID des Items in deiner Hand");
+    public IDCommand(Core owner) {
+        super(owner, Command.create("id", "Zeige die ID des Items in deiner Hand an."));
     }
 
     @Override
@@ -28,10 +26,5 @@ public class IDCommand extends PluginCommand<Core> implements CommandFactory {
             player.sendMessage(Language.getAndReplace("id", item.getId().getNamespace(), item.getId().getName()));
         }
         return true;
-    }
-
-    @Override
-    public Command create(String s) {
-        return this;
     }
 }
