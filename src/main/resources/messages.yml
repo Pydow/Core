@@ -10,11 +10,11 @@ id-secret: "Hä, was willst du denn mit Luft anstellen?"
 gamemode-usage: "Nutze: &e/gamemode <0|1|2|3> <Spieler>"
 invalid-gamemode: "&cDieser Gamemode existiert nicht. &7(0-3)"
 gamemode-set-own: "Du bist nun im &eGamemode [0]§7."
-gamemode-set-other: "Der Spieler &e[1] &7ist nun im §eGamemode [0]&7."
+gamemode-set-other: "&e[1] &7ist nun im §eGamemode [0]&7."
 
 # /teleport
 teleport-to-1: "Du wurdest zu &e[0] &7teleportiert."
-teleport-to-2: "Der Spieler &e[0] &7wurde zu &e[1] &7teleportiert."
+teleport-to-2: "&e[0] &7wurde zu &e[1] &7teleportiert."
 teleported: "Du wurdest teleportiert."
 invalid-coordinates: "&cBitte gebe gültige Koordinaten an."
 teleport-usage: "Nutze: &e/teleport <Spieler> <Spieler>"
@@ -22,8 +22,8 @@ teleport-usage: "Nutze: &e/teleport <Spieler> <Spieler>"
 # /fly
 fly-disabled: "Du kannst nun nicht mehr fliegen."
 fly-enabled: "Du kannst nun fliegen."
-fly-disabled-for: "Der Spieler &e[0] &7kann nun nicht mehr fliegen."
-fly-enabled-for: "Der Spieler &e[0] &7kann nun fliegen."
+fly-disabled-for: "&e[0] &7kann nun nicht mehr fliegen."
+fly-enabled-for: "&e[0] &7kann nun fliegen."
 fly-usage: "Nutze: &e/fly <Spieler>"
 
 # /time
@@ -39,7 +39,7 @@ weather-usage: "Nutze: &e/weather <clear|rain|thunder>"
 broadcast: "Nutze: &e/broadcast <Nachricht>"
 
 # /tpa
-request-sent: "&aDu hast dem Spieler &e[0] &aeine Tpa gesendet."
+request-sent: "&aDu hast &e[0] &aeine Tpa gesendet."
 request-received: "&aDu hast eine Tpa von &e[0] &aerhalten."
 request-received-info: "Nehme sie mit &a/tpaccept &7an oder lehne sie mit &c/tpdeny &7ab."
 tpa-usage: "Nutze: &e/tpa <Spieler>"

@@ -34,7 +34,7 @@ public class VanishCommand extends PluginCommand<Core> {
                     if (player1 != null) {
                         CoreData.toggleVanish(player1);
                         CoreData.updatePlayer(player1);
-                        player.sendMessage(Language.getAndReplace("vanished-other", player1.getName()));
+                        player.sendMessage(Language.getAndReplace("vanished-other", player1.getDisplayName()));
                     }
                 } else if (args.length == 2) {
                     if (args[0].equals("show")) {
@@ -42,13 +42,13 @@ public class VanishCommand extends PluginCommand<Core> {
                         if (CoreData.vanish.contains(player1.getName())) {
                             player.showPlayer(player1);
                             player1.showPlayer(player);
-                            player.sendMessage(Language.getAndReplace("player-show", player1.getName()));
+                            player.sendMessage(Language.getAndReplace("player-show", player1.getDisplayName()));
                         } else player.sendMessage(Language.getAndReplace("player-not-vanished"));
                     } else if (args[0].equals("spy")) {
                         Player player1 = Server.getInstance().getPlayer(args[1]);
                         if (CoreData.vanish.contains(player1.getName())) {
                             player.showPlayer(player1);
-                            player.sendMessage(Language.getAndReplace("player-spy", player1.getName()));
+                            player.sendMessage(Language.getAndReplace("player-spy", player1.getDisplayName()));
                         } else player.sendMessage(Language.getAndReplace("player-not-vanished"));
                     } else player.sendMessage(Language.getAndReplace("vanish-usage"));
                 } else player.sendMessage(Language.getAndReplace("vanish-usage"));

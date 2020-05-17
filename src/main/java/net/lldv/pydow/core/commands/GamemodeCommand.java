@@ -49,7 +49,7 @@ public class GamemodeCommand extends PluginCommand<Core> {
                         return true;
                     }
                     player.setGamemode(gameMode);
-                    sender.sendMessage(Language.getAndReplace("gamemode-set-other", gameMode, player.getName()));
+                    sender.sendMessage(Language.getAndReplace("gamemode-set-other", gameMode, player.getDisplayName()));
                 } catch (NumberFormatException exception) {
                     player.sendMessage(Language.getAndReplace("invalid-gamemode"));
                 }

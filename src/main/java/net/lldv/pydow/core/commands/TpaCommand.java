@@ -33,8 +33,8 @@ public class TpaCommand extends PluginCommand<Core> {
                     return true;
                 }
                 TpaData.tpaRequest.put(player1.getName(), new TpaData(player, player1, System.currentTimeMillis() + 30000));
-                player.sendMessage(Language.getAndReplace("request-sent", player1.getName()));
-                player1.sendMessage(Language.getAndReplace("request-received", player.getName()));
+                player.sendMessage(Language.getAndReplace("request-sent", player1.getDisplayName()));
+                player1.sendMessage(Language.getAndReplace("request-received", player.getDisplayName()));
                 player1.sendMessage(Language.getAndReplace("request-received-info"));
             } else player.sendMessage(Language.getAndReplace("tpa-usage"));
         }

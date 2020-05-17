@@ -40,11 +40,11 @@ public class FlyCommand extends PluginCommand<Core> {
                 if (player.getAllowFlight()) {
                     player.setAllowFlight(false);
                     player.sendMessage(Language.getAndReplace("fly-disabled"));
-                    sender.sendMessage(Language.getAndReplace("fly-disabled-for", args[0]));
+                    sender.sendMessage(Language.getAndReplace("fly-disabled-for", player.getDisplayName()));
                 } else if (!player.getAllowFlight()) {
                     player.setAllowFlight(true);
                     player.sendMessage(Language.getAndReplace("fly-enabled"));
-                    sender.sendMessage(Language.getAndReplace("fly-enabled-for", args[0]));
+                    sender.sendMessage(Language.getAndReplace("fly-enabled-for", player.getDisplayName()));
                 }
             } else sender.sendMessage(Language.getAndReplace("fly-usage"));
         } else sender.sendMessage(Language.getAndReplace("no-permission"));

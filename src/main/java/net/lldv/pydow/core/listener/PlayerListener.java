@@ -28,13 +28,13 @@ public class PlayerListener implements Listener {
         event.setQuitMessage(Language.getAndReplaceNoPrefix("player-quit", player.getName()));
     }
 
-    /*@EventHandler
+    @EventHandler
     public void onQuery(QueryRegenerateEvent event) {
         Player[] playerList = event.getPlayerList();
         List<Player> players = Arrays.asList(playerList);
         players.removeIf(player -> CoreData.vanish.contains(player.getName()));
         Player[] playerNew = players.toArray(new Player[]{});
         event.setPlayerList(playerNew);
-    }*/
+    }
 
 }

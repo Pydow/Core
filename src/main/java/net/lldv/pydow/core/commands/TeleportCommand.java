@@ -33,7 +33,7 @@ public class TeleportCommand extends PluginCommand<Core> {
                     Player target = Server.getInstance().getPlayer(args[0]);
                     if (target != null) {
                         player.teleport(target.getLocation());
-                        player.sendMessage(Language.getAndReplace("teleport-to-1", target.getName()));
+                        player.sendMessage(Language.getAndReplace("teleport-to-1", target.getDisplayName()));
                     } else player.sendMessage(Language.getAndReplace("player-not-online", args[0]));
                 } else if (args.length == 2) {
                     Player target = Server.getInstance().getPlayer(args[0]);
@@ -41,8 +41,8 @@ public class TeleportCommand extends PluginCommand<Core> {
                     if (target != null) {
                         if (targetTo != null) {
                             target.teleport(targetTo.getLocation());
-                            player.sendMessage(Language.getAndReplace("teleport-to-2", target.getName(), targetTo.getName()));
-                        } player.sendMessage(Language.getAndReplace("player-not-online", args[1]));
+                            player.sendMessage(Language.getAndReplace("teleport-to-2", target.getDisplayName(), targetTo.getDisplayName()));
+                        } else player.sendMessage(Language.getAndReplace("player-not-online", args[1]));
                     } else player.sendMessage(Language.getAndReplace("player-not-online", args[0]));
                 } else if (args.length == 3) {
                     try {

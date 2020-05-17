@@ -27,7 +27,7 @@ public class TpacceptCommand extends PluginCommand<Core> {
                 }
                 if (tpa.getReceiver().isOnline() && tpa.getRequester().isOnline()) {
                     tpa.getRequester().teleport(player.getLocation());
-                    tpa.getRequester().sendMessage(Language.getAndReplace("tpa-teleport-to", player.getName()));
+                    tpa.getRequester().sendMessage(Language.getAndReplace("tpa-teleport-to", player.getDisplayName()));
                     player.sendMessage(Language.getAndReplace("tpa-teleport-me", tpa.getRequester().getName()));
                 } else player.sendMessage(Language.getAndReplace("receiver-not-online"));
                 TpaData.tpaRequest.remove(player.getName());
