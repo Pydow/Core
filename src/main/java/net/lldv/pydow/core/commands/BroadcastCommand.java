@@ -14,7 +14,7 @@ public class BroadcastCommand extends PluginCommand<Core> {
     public BroadcastCommand(Core owner) {
         super(owner, Command.create("broadcast", "Schreibe eine wichtige Info an alle Spieler",
                 new String[]{"pydow.core.command.broadcast"},
-                new String[]{"bc", "b", "info"},
+                new String[]{"bc", "b", "say"},
                 new CommandParameter[]{new CommandParameter("message", CommandParamType.TEXT, false)}));
     }
 

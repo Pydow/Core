@@ -4,13 +4,9 @@ import cn.nukkit.event.EventHandler;
 import cn.nukkit.event.Listener;
 import cn.nukkit.event.player.PlayerJoinEvent;
 import cn.nukkit.event.player.PlayerQuitEvent;
-import cn.nukkit.event.server.QueryRegenerateEvent;
 import cn.nukkit.player.Player;
 import net.lldv.pydow.core.components.data.CoreData;
 import net.lldv.pydow.core.components.language.Language;
-
-import java.util.Arrays;
-import java.util.List;
 
 public class PlayerListener implements Listener {
 
@@ -28,13 +24,13 @@ public class PlayerListener implements Listener {
         event.setQuitMessage(Language.getAndReplaceNoPrefix("player-quit", player.getName()));
     }
 
-    @EventHandler
+    /*@EventHandler
     public void onQuery(QueryRegenerateEvent event) {
         Player[] playerList = event.getPlayerList();
         List<Player> players = Arrays.asList(playerList);
         players.removeIf(player -> CoreData.vanish.contains(player.getName()));
         Player[] playerNew = players.toArray(new Player[]{});
         event.setPlayerList(playerNew);
-    }
+    }*/
 
 }

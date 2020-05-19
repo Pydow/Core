@@ -1,5 +1,5 @@
 prefix: "§8» §eCore §8| §7"
-no-permission: "&cDazu hast du keine Rechte."
+no-permission: "&cLaut dem Recht-Und-Ordnung-System hast du keine Rechte dies zu tun."
 player-not-online: "§e[0] §7ist nicht online."
 
 # /id
@@ -8,9 +8,9 @@ id-secret: "Hä, was willst du denn mit Luft anstellen?"
 
 # /gamemode
 gamemode-usage: "Nutze: &e/gamemode <0|1|2|3> <Spieler>"
-invalid-gamemode: "&cDieser Gamemode existiert nicht. &7(0-3)"
-gamemode-set-own: "Du bist nun im &eGamemode [0]§7."
-gamemode-set-other: "&e[1] &7ist nun im §eGamemode [0]&7."
+invalid-gamemode: "&cDieser Gammelmodus existiert nicht. &7(0-3)"
+gamemode-set-own: "Du bist nun im &eGammelmodus [0]§7."
+gamemode-set-other: "&e[1] &7ist nun im §eGammelmodus [0]&7."
 
 # /teleport
 teleport-to-1: "Du wurdest zu &e[0] &7teleportiert."
@@ -20,10 +20,10 @@ invalid-coordinates: "&cBitte gebe gültige Koordinaten an."
 teleport-usage: "Nutze: &e/teleport <Spieler> <Spieler>"
 
 # /fly
-fly-disabled: "Du kannst nun nicht mehr fliegen."
-fly-enabled: "Du kannst nun fliegen."
+fly-disabled: "Bereit zur Landung?"
+fly-enabled: "Du kannst nun fliegen wie ein toller Schmetterling. Flatter... Flatter..."
 fly-disabled-for: "&e[0] &7kann nun nicht mehr fliegen."
-fly-enabled-for: "&e[0] &7kann nun fliegen."
+fly-enabled-for: "&e[0] &7kann nun fliegen wie ein Vögelchen."
 fly-usage: "Nutze: &e/fly <Spieler>"
 
 # /time
@@ -53,19 +53,19 @@ tpa-teleport-me: "&e[0] &awird zu dir teleportiert."
 tpa-denied: "&aDu hast die Tpa abgelehnt."
 
 # /vanish
-vanish-enabled: "Du bist nun im Vanish."
-vanish-disabled: "Du bist nun nicht mehr im Vanish."
-vanished-other: "&e[0] &7ist nun im Vanish."
+vanish-enabled: "Du bist nun ein Geist."
+vanish-disabled: "Du bist nun nicht mehr ein Geist."
+vanished-other: "&e[0] &7ist nun ein Geist."
 player-show: "Du und &e[0] &7seht euch nun gegenseitig."
 player-spy: "Du siehst nun &e[0]&7."
-player-not-vanished: "Dieser Spieler ist nicht im Vanish."
+player-not-vanished: "Dieser Spieler ist kein Geist."
 vanish-usage: "Nutze: &e/vanish <Player>"
 
 # /msg /reply
 msg-to: "§8» §eMsg §8| §eMir §8-> &e[2] §8» &7[0]"
 msg-from: "§8» §eMsg §8| §e[2] §8-> &eMir §8» &7[0]"
 msg-usage: "Nutze: &e/msg <Spieler> <Nachricht>"
-nobody-to-reply: "&cDu hast niemanden, den du antworten kannst."
+nobody-to-reply: "&cDu hast niemanden, den du antworten kannst. :'("
 reply-usage: "Nutze: &e/r <Nachricht>"
 
 # /teamchat

@@ -29,6 +29,12 @@ public class Core extends PluginBase {
         cr.unregister(this, "time");
         cr.unregister(this, "weather");
         cr.unregister(this, "tell");
+        cr.unregister(this, "ban");
+        cr.unregister(this, "banip");
+        cr.unregister(this, "banlist");
+        cr.unregister(this, "kick");
+        cr.unregister(this, "pardon");
+        cr.unregister(this, "say");
         cr.register(this, new IDCommand(this));
         cr.register(this, new GamemodeCommand(this));
         cr.register(this, new TeleportCommand(this));
