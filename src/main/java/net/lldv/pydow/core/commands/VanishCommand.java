@@ -1,7 +1,6 @@
 package net.lldv.pydow.core.commands;
 
 import cn.nukkit.Server;
-import cn.nukkit.command.CommandFactory;
 import cn.nukkit.command.CommandSender;
 import cn.nukkit.command.PluginCommand;
 import cn.nukkit.command.data.CommandParamType;

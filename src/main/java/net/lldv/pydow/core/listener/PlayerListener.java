@@ -11,7 +11,7 @@ import net.lldv.pydow.core.components.language.Language;
 public class PlayerListener implements Listener {
 
     @EventHandler
-    public void onJoin(PlayerJoinEvent event) {
+    public void on(PlayerJoinEvent event) {
         Player player = event.getPlayer();
         CoreData.updatePlayer(player);
         player.setCheckMovement(false);
@@ -19,18 +19,9 @@ public class PlayerListener implements Listener {
     }
 
     @EventHandler
-    public void onQuit(PlayerQuitEvent event) {
+    public void on(PlayerQuitEvent event) {
         Player player = event.getPlayer();
         event.setQuitMessage(Language.getAndReplaceNoPrefix("player-quit", player.getName()));
     }
-
-    /*@EventHandler
-    public void onQuery(QueryRegenerateEvent event) {
-        Player[] playerList = event.getPlayerList();
-        List<Player> players = Arrays.asList(playerList);
-        players.removeIf(player -> CoreData.vanish.contains(player.getName()));
-        Player[] playerNew = players.toArray(new Player[]{});
-        event.setPlayerList(playerNew);
-    }*/
 
 }

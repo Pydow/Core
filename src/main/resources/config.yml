@@ -1,0 +1,3 @@
+MongoDB:
+  Uri: "mongodb+srv://root:Mv8MF9RKbp2VPtU1@testserver-ujdt6.mongodb.net/test"
+  Database: "core"

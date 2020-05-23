@@ -1,6 +1,20 @@
 prefix: "§8» §eCore §8| §7"
-no-permission: "&cLaut dem Recht-Und-Ordnung-System hast du keine Rechte dies zu tun."
+no-permission: "&cLaut des Recht-Und-Ordnung-Systems hast du keine Rechte dies zu tun."
 player-not-online: "§e[0] §7ist nicht online."
+invalid-time: "&cBitte gebe eine gültige Zeit an."
+
+# duration
+permanent: "Lebenslang"
+days: "Tage"
+day: "Tag"
+hours: "Stunden"
+hour: "Stunde"
+minutes: "Minuten"
+minute: "Minute"
+seconds: "Nicht mehr lange"
+negative: "Zeit ist negativ"
+
+# -=- Core -=-
 
 # /id
 id: "ID: [0]:[1]"
@@ -28,7 +42,6 @@ fly-usage: "Nutze: &e/fly <Spieler>"
 
 # /time
 time-set: "Du hast die Zeit in deiner Welt geändert."
-invalid-time: "&cBitte gebe eine gültige Zeit an."
 time-usage: "Nutze: &e/time <Time>"
 
 # /weather
@@ -75,3 +88,52 @@ teamchat-usage: "Nutze: &e/teamchat <Nachricht>"
 # Join Listener
 player-joined: "§8» §e[0] §7hat den Server betreten."
 player-quit: "§8» §e[0] §7hat den Server verlassen."
+
+
+# -=- BanSystem -=-
+
+already-set: "&cDer Eintrag &e[0] &cexistiert bereits."
+no-data: "&cEs konnten keine Daten mit dem Suchbegriff &e[0] &cgefunden werden."
+
+# /ban
+player-banned: "&aDer Spieler &e[0] &awurde für &e[1] &agebannt."
+ban-usage: "Nutze: &e/ban <Spieler> <Zeiteinheit> <Zeit> <Grund>"
+
+# /mute
+player-muted: "&aDer Spieler &e[0] &awurde für &e[1] &agemutet."
+mute-usage: "Nutze: &e/ban <Spieler> <Zeiteinheit> <Zeit> <Grund>"
+
+# /unban
+player-unbanned: "&e[0] &awurde entbannt."
+unban-usage: "Nutze: &e/unban <Spieler>"
+
+# /unmute
+player-unmuted: "&e[0] &awurde entmutet."
+unmuted-usage: "Nutze: &e/unmute <Spieler>"
+
+# /getban
+getban-info: "&aEs wurde ein Eintrag gefunden:"
+getban-player: "Spieler: &e[0]"
+getban-reason: "Grund: &e[0]"
+getban-creator: "Ersteller: &e[0]"
+getban-id: "Identifikation: &e[0]"
+getban-date: "Gebannt am: &e[0]"
+getban-duration: "Zeit: &e[0]"
+getban-usage: "Nutze: &e/getban <Identifikation|Spieler>"
+
+# /getmute
+getmute-info: "&aEs wurde ein Eintrag gefunden:"
+getmute-player: "Spieler: &e[0]"
+getmute-reason: "Grund: &e[0]"
+getmute-creator: "Ersteller: &e[0]"
+getmute-id: "Identifikation: &e[0]"
+getmute-date: "Gemutet am: &e[0]"
+getmute-duration: "Zeit: &e[0]"
+getmute-usage: "Nutze: &e/getmute <Identifikation|Spieler>"
+
+# Punish listener
+ban-screen: "&eDu wurdest gebannt. Grund: &7[0]\n&eID: &7[1] &eVerbleibende Zeit: &7[2]"
+
+chat-muted-info: "&cDu wurdest aus dem Chat gebannt."
+chat-muted-reason: "&cGrund: &7[0]"
+chat-muted-time: "&cVerbleibende Zeit: &7[0]"

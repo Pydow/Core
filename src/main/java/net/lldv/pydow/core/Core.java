@@ -2,17 +2,22 @@ package net.lldv.pydow.core;
 
 import cn.nukkit.plugin.PluginBase;
 import cn.nukkit.registry.CommandRegistry;
+import net.lldv.pydow.core.api.CoreAPI;
 import net.lldv.pydow.core.commands.*;
+import net.lldv.pydow.core.components.database.MongoDB;
+import net.lldv.pydow.core.components.elements.punishsystem.commands.*;
+import net.lldv.pydow.core.components.elements.punishsystem.listener.PunishListener;
 import net.lldv.pydow.core.components.language.Language;
 import net.lldv.pydow.core.listener.PlayerListener;
 
 public class Core extends PluginBase {
 
-    public static Core instance;
+    private static Core instance;
 
     @Override
     public void onLoad() {
         instance = this;
+        saveDefaultConfig();
         Language.init();
         registerCommands();
     }
@@ -20,6 +25,9 @@ public class Core extends PluginBase {
     @Override
     public void onEnable() {
         getServer().getPluginManager().registerEvents(new PlayerListener(), this);
+        getServer().getPluginManager().registerEvents(new PunishListener(), this);
+        new CoreAPI().loadAPI();
+        MongoDB.connect(this);
     }
 
     public void registerCommands() {
@@ -49,6 +57,13 @@ public class Core extends PluginBase {
         cr.register(this, new MsgCommand(this));
         cr.register(this, new ReplyCommand(this));
         cr.register(this, new TeamchatCommand(this));
+
+        cr.register(this, new BanCommand(this));
+        cr.register(this, new MuteCommand(this));
+        cr.register(this, new UnbanCommand(this));
+        cr.register(this, new UnmuteCommand(this));
+        cr.register(this, new GetbanCommand(this));
+        cr.register(this, new GetmuteCommand(this));
     }
 
 
