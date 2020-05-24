@@ -66,6 +66,7 @@ public class Core extends PluginBase {
         cr.register(this, new UnmuteCommand(this));
         cr.register(this, new GetbanCommand(this));
         cr.register(this, new GetmuteCommand(this));
+        cr.register(this, new HistoryCommand(this));
     }
 
 

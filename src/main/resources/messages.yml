@@ -14,6 +14,8 @@ minute: "Minute"
 seconds: "Nicht mehr lange"
 negative: "Keine"
 
+already-set: "&cDer Eintrag &e[0] &cexistiert bereits."
+no-data: "&cEs konnten keine Daten mit dem Suchbegriff &e[0] &cgefunden werden."
 # -=- Core -=-
 
 # /id
@@ -92,9 +94,6 @@ player-quit: "§8» §e[0] §7hat den Server verlassen."
 
 # -=- BanSystem -=-
 
-already-set: "&cDer Eintrag &e[0] &cexistiert bereits."
-no-data: "&cEs konnten keine Daten mit dem Suchbegriff &e[0] &cgefunden werden."
-
 # /ban
 player-banned: "&aDer Spieler &e[0] &awurde für &e[1] &agebannt."
 ban-usage: "Nutze: &e/ban <Spieler> <Zeiteinheit> <Wert> <Grund>"
@@ -130,6 +129,13 @@ getmute-id: "Identifikation: &e[0]"
 getmute-date: "Gemutet am: &e[0]"
 getmute-duration: "Zeit: &e[0]"
 getmute-usage: "Nutze: &e/getmute <Identifikation|Spieler>"
+
+# /history
+history-info: "&e[1] &aEinträge zu &e[0] &agefunden. Typ: &e[2]"
+history-reason: "Grund: &e[0]"
+history-creator: "Ersteller: &e[0]"
+history-id: "Identifikation: &e[0]"
+history-date: "Erstellt am: &e[0]"
 
 # Punish listener
 ban-screen: "&eDu wurdest gebannt. Grund: &7[0]\n&eID: &7[1] &eVerbleibende Zeit: &7[2]"
