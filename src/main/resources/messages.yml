@@ -12,7 +12,7 @@ hour: "Stunde"
 minutes: "Minuten"
 minute: "Minute"
 seconds: "Nicht mehr lange"
-negative: "Zeit ist negativ"
+negative: "Keine"
 
 # -=- Core -=-
 
@@ -97,11 +97,11 @@ no-data: "&cEs konnten keine Daten mit dem Suchbegriff &e[0] &cgefunden werden."
 
 # /ban
 player-banned: "&aDer Spieler &e[0] &awurde für &e[1] &agebannt."
-ban-usage: "Nutze: &e/ban <Spieler> <Zeiteinheit> <Zeit> <Grund>"
+ban-usage: "Nutze: &e/ban <Spieler> <Zeiteinheit> <Wert> <Grund>"
 
 # /mute
 player-muted: "&aDer Spieler &e[0] &awurde für &e[1] &agemutet."
-mute-usage: "Nutze: &e/ban <Spieler> <Zeiteinheit> <Zeit> <Grund>"
+mute-usage: "Nutze: &e/ban <Spieler> <Zeiteinheit> <Wert> <Grund>"
 
 # /unban
 player-unbanned: "&e[0] &awurde entbannt."

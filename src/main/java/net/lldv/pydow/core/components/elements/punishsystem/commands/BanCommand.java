@@ -6,6 +6,7 @@ import net.lldv.pydow.core.Core;
 import net.lldv.pydow.core.api.CoreAPI;
 import net.lldv.pydow.core.components.language.Language;
 import net.lldv.pydow.core.components.tools.Command;
+import net.lldv.pydow.core.components.tools.TimeTool;
 
 public class BanCommand extends PluginCommand<Core> {
 
@@ -20,6 +21,10 @@ public class BanCommand extends PluginCommand<Core> {
             if (args.length >= 4) {
                 String player = args[0];
                 String timeString = args[1];
+                if (!TimeTool.timeStrings.contains(timeString)) {
+                    sender.sendMessage(Language.getAndReplace("invalid-time"));
+                    return true;
+                }
                 try {
                     double time = Double.parseDouble(args[2]);
                     String reason = "";

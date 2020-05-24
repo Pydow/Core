@@ -3,8 +3,18 @@ package net.lldv.pydow.core.components.tools;
 import net.lldv.pydow.core.components.language.Language;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 
 public class TimeTool {
+
+    public static ArrayList<String> timeStrings = new ArrayList<>();
+
+    public void init() {
+        timeStrings.add("weeks");
+        timeStrings.add("days");
+        timeStrings.add("hours");
+        timeStrings.add("minutes");
+    }
 
     public static long weeksInMilis(double weeks) {
         return (long) (weeks * 604800000);

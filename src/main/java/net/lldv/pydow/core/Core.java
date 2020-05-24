@@ -8,6 +8,7 @@ import net.lldv.pydow.core.components.database.MongoDB;
 import net.lldv.pydow.core.components.elements.punishsystem.commands.*;
 import net.lldv.pydow.core.components.elements.punishsystem.listener.PunishListener;
 import net.lldv.pydow.core.components.language.Language;
+import net.lldv.pydow.core.components.tools.TimeTool;
 import net.lldv.pydow.core.listener.PlayerListener;
 
 public class Core extends PluginBase {
@@ -27,6 +28,7 @@ public class Core extends PluginBase {
         getServer().getPluginManager().registerEvents(new PlayerListener(), this);
         getServer().getPluginManager().registerEvents(new PunishListener(), this);
         new CoreAPI().loadAPI();
+        new TimeTool().init();
         MongoDB.connect(this);
     }
 
