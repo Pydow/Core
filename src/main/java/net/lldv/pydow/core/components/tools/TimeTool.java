@@ -50,9 +50,7 @@ public class TimeTool {
             int hours = (int) (time / 3600000L % 24L);
             int minutes = (int) (time / 60000L % 60L);
             String day = Language.getAndReplaceNoPrefix("days");
-            if (days == 1) {
-                day = Language.getAndReplaceNoPrefix("day");
-            }
+            if (days == 1) day = Language.getAndReplaceNoPrefix("day");
             String hour = Language.getAndReplaceNoPrefix("hours");
             if (hours == 1) hour = Language.getAndReplaceNoPrefix("hour");
             String minute = Language.getAndReplaceNoPrefix("minutes");

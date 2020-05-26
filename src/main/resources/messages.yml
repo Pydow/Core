@@ -87,6 +87,11 @@ reply-usage: "Nutze: &e/r <Nachricht>"
 teamchat: "§8» §cTeamchat §8| §7[0] §8» §f[1]"
 teamchat-usage: "Nutze: &e/teamchat <Nachricht>"
 
+# /heal
+healed: "&aDu bist nun Putzmunter-Gesund."
+player-healed: "&e[0] &aist nun Putzmunter-Gesund."
+heal-usage: "Nutze: &e/heal <Spieler>"
+
 # Join Listener
 player-joined: "§8» §e[0] §7hat den Server betreten."
 player-quit: "§8» §e[0] §7hat den Server verlassen."
