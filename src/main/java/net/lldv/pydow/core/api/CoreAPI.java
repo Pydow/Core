@@ -1,5 +1,9 @@
 package net.lldv.pydow.core.api;
 
+import cn.nukkit.level.Sound;
+import cn.nukkit.player.Player;
+import com.nukkitx.math.vector.Vector3f;
+import com.nukkitx.protocol.bedrock.packet.PlaySoundPacket;
 import net.lldv.pydow.core.components.elements.punishsystem.PunishHandler;
 import net.lldv.pydow.core.components.elements.holograms.HologramHandler;
 import net.lldv.pydow.core.components.elements.homesystem.HomeHandler;
@@ -55,5 +59,14 @@ public class CoreAPI {
         Date now = new Date();
         DateFormat dateFormat = new SimpleDateFormat("dd.MM.yy HH:mm");
         return dateFormat.format(now);
+    }
+
+    public static void playSound(Player player, Sound sound, float volume, float pitch) {
+        PlaySoundPacket packet = new PlaySoundPacket();
+        packet.setSound(sound.getSound());
+        packet.setPosition(Vector3f.from(new Double(player.getLocation().getX()).intValue(), new Double(player.getLocation().getY()).intValue(), new Double(player.getLocation().getZ()).intValue()));
+        packet.setVolume(volume);
+        packet.setPitch(pitch);
+        player.sendPacket(packet);
     }
 }

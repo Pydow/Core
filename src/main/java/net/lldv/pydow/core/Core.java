@@ -69,7 +69,6 @@ public class Core extends PluginBase {
         cr.register(this, new HistoryCommand(this));
     }
 
-
     public static Core getInstance() {
         return instance;
     }

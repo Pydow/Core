@@ -6,6 +6,8 @@ import com.mongodb.client.MongoCollection;
 import net.lldv.pydow.core.api.CoreAPI;
 import net.lldv.pydow.core.components.database.MongoDB;
 import net.lldv.pydow.core.components.elements.punishsystem.data.Punishment;
+import net.lldv.pydow.core.components.event.PlayerBanEvent;
+import net.lldv.pydow.core.components.event.PlayerMuteEvent;
 import net.lldv.pydow.core.components.language.Language;
 import net.lldv.pydow.core.components.tools.TimeTool;
 import org.bson.Document;
@@ -34,6 +36,7 @@ public class PunishHandler {
                 .append("date", date)
                 .append("time", end);
         MongoDB.getBanCollection().insertOne(document);
+        Server.getInstance().getPluginManager().callEvent(new PlayerBanEvent(null, player, creator, reason, id, date, timeString, time));
         Player online = Server.getInstance().getPlayer(player);
         if (online != null) online.kick(Language.getAndReplaceNoPrefix("ban-screen", reason, id, TimeTool.durationInString(end)), false);
         createBanHistory(new Punishment(player, id, reason, creator, date, end));
@@ -54,6 +57,7 @@ public class PunishHandler {
                 .append("date", date)
                 .append("time", end);
         MongoDB.getMuteCollection().insertOne(document);
+        Server.getInstance().getPluginManager().callEvent(new PlayerMuteEvent(null, player, creator, reason, id, date, timeString, time));
         Player online = Server.getInstance().getPlayer(player);
         if (online != null) cachedMute.put(player, new Punishment(player, id, reason, creator, date, end));
         createMuteHistory(new Punishment(player, id, reason, creator, date, end));
