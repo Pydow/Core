@@ -92,9 +92,16 @@ healed: "&aDu bist nun Putzmunter-Gesund."
 player-healed: "&e[0] &aist nun Putzmunter-Gesund."
 heal-usage: "Nutze: &e/heal <Spieler>"
 
-# Join Listener
+# /size
+size-changed: "&aDeine Größe wurde angepasst: &e[0]"
+invalid-size: "&cDie Größe darf nicht kleiner als 0 und nicht größer als 30 sein."
+size-usage: "Nutze: &e/size <Größe>"
+
+
+# Listener
 player-joined: "§8» §e[0] §7hat den Server betreten."
 player-quit: "§8» §e[0] §7hat den Server verlassen."
+no-spam: "&cBitte Spamme nicht im Chat."
 
 
 # -=- HomeSystem -=-

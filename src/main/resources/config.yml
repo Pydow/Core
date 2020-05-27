@@ -1,3 +1,12 @@
 MongoDB:
   Uri: "mongodb+srv://root:Mv8MF9RKbp2VPtU1@testserver-ujdt6.mongodb.net/test"
   Database: "core"
+
+BroadcastMessages:
+  - "§8» §ePydow §8| §7Setze §6Homes§7, um dich immer an den gesetzten Punkt zu teleportieren. §8[§6/home§8]"
+  - "§8» §ePydow §8| §7Du benötigst Hilfe? Schau doch mal bei §b/help §7vorbei."
+  - "§8» §ePydow §8| §7Wir haben auch einen §aDiscord-Server§7! EINLADUNG"
+  - "§8» §ePydow §8| §7Durch das Abbauen von Erzen in der Farmwelt erhälst du Geld."
+  - "§8» §ePydow §8| §7Erstelle §6ChestShops§7, um Items an andere Spieler zu verkaufen und Geld zu verdienen."
+  - "§8» §ePydow §8| §7Während du Items farmst, erhälst du §bXP-Punkte§7. §8[§b/level§8]"
+  - "§8» §ePydow §8| §7Du kannst täglich §cVoten§7, um uns zu unterstützen und eine Belohung zu erhalten. §8[§c/vote§8]"

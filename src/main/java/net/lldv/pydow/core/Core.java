@@ -15,11 +15,15 @@ import net.lldv.pydow.core.components.elements.warpsystem.commands.WarpCommand;
 import net.lldv.pydow.core.components.elements.warpsystem.commands.WarpsCommand;
 import net.lldv.pydow.core.components.language.Language;
 import net.lldv.pydow.core.components.tools.TimeTool;
-import net.lldv.pydow.core.listener.PlayerListener;
+import net.lldv.pydow.core.listener.EventListener;
+
+import java.util.ArrayList;
+import java.util.Random;
 
 public class Core extends PluginBase {
 
     private static Core instance;
+    public ArrayList<String> broadcastMessages = new ArrayList<>();
 
     @Override
     public void onLoad() {
@@ -31,14 +35,19 @@ public class Core extends PluginBase {
 
     @Override
     public void onEnable() {
-        getServer().getPluginManager().registerEvents(new PlayerListener(), this);
+        getServer().getPluginManager().registerEvents(new EventListener(), this);
         getServer().getPluginManager().registerEvents(new PunishListener(), this);
         new CoreAPI().loadAPI();
         new TimeTool().init();
         MongoDB.connect(this);
-        getServer().getScheduler().scheduleDelayedTask(this, () -> {
-            CoreAPI.getWarpHandler().cacheAllWarps();
-        }, 40, true);
+        getServer().getScheduler().scheduleDelayedTask(this, () -> CoreAPI.getWarpHandler().cacheAllWarps(), 40, true);
+
+        broadcastMessages.addAll(getConfig().getStringList("BroadcastMessages"));
+        getServer().getScheduler().scheduleDelayedRepeatingTask(this, () -> {
+            Random random = new Random();
+            String message = broadcastMessages.get(random.nextInt(broadcastMessages.size()));
+            getServer().broadcastMessage(message);
+        }, 6000, 6000);
     }
 
     public void registerCommands() {
@@ -68,6 +77,8 @@ public class Core extends PluginBase {
         cr.register(this, new MsgCommand(this));
         cr.register(this, new ReplyCommand(this));
         cr.register(this, new TeamchatCommand(this));
+        cr.register(this, new HealCommand(this));
+        cr.register(this, new SizeCommand(this));
 
         cr.register(this, new BanCommand(this));
         cr.register(this, new MuteCommand(this));
