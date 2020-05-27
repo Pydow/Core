@@ -79,6 +79,7 @@ public class Core extends PluginBase {
         cr.register(this, new TeamchatCommand(this));
         cr.register(this, new HealCommand(this));
         cr.register(this, new SizeCommand(this));
+        cr.register(this, new SignCommand(this));
 
         cr.register(this, new BanCommand(this));
         cr.register(this, new MuteCommand(this));

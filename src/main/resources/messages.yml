@@ -97,6 +97,11 @@ size-changed: "&aDeine Größe wurde angepasst: &e[0]"
 invalid-size: "&cDie Größe darf nicht kleiner als 0 und nicht größer als 30 sein."
 size-usage: "Nutze: &e/size <Größe>"
 
+# /sign
+sign-invalid-item: "&cBitte halte ein gültiges Item in deiner Hand."
+item-signed: "&aDein Item wurde signiert."
+sign-usage: "Nutze: &e/sign <Text>"
+
 
 # Listener
 player-joined: "§8» §e[0] §7hat den Server betreten."
