@@ -16,23 +16,23 @@ public class TimeTool {
         timeStrings.add("minutes");
     }
 
-    public static long weeksInMilis(double weeks) {
+    public static long weeksInMillis(double weeks) {
         return (long) (weeks * 604800000);
     }
 
-    public static long daysInMilis(double days) {
+    public static long daysInMillis(double days) {
         return (long) (days * 86400000);
     }
 
-    public static long hoursInMilis(double hours) {
+    public static long hoursInMillis(double hours) {
         return (long) (hours * 3600000);
     }
 
-    public static long minutesInMilis(double minutes) {
+    public static long minutesInMillis(double minutes) {
         return (long) (minutes * 60000);
     }
 
-    public static long secondsInMilis(double seconds) {
+    public static long secondsInMillis(double seconds) {
         return (long) (seconds * 1000);
     }
 

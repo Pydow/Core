@@ -25,10 +25,10 @@ public class PunishHandler {
         String id = CoreAPI.getRandomIDCode();
         String date = CoreAPI.getDate();
         long end = -1;
-        if ("weeks".equals(timeString)) end = TimeTool.weeksInMilis(time) + System.currentTimeMillis();
-        else if ("days".equals(timeString)) end = TimeTool.daysInMilis(time) + System.currentTimeMillis();
-        else if ("hours".equals(timeString)) end = TimeTool.hoursInMilis(time) + System.currentTimeMillis();
-        else if ("minutes".equals(timeString)) end = TimeTool.minutesInMilis(time) + System.currentTimeMillis();
+        if ("weeks".equals(timeString)) end = TimeTool.weeksInMillis(time) + System.currentTimeMillis();
+        else if ("days".equals(timeString)) end = TimeTool.daysInMillis(time) + System.currentTimeMillis();
+        else if ("hours".equals(timeString)) end = TimeTool.hoursInMillis(time) + System.currentTimeMillis();
+        else if ("minutes".equals(timeString)) end = TimeTool.minutesInMillis(time) + System.currentTimeMillis();
         Document document = new Document("player", player)
                 .append("creator", creator)
                 .append("reason", reason)
@@ -46,10 +46,10 @@ public class PunishHandler {
         String id = CoreAPI.getRandomIDCode();
         String date = CoreAPI.getDate();
         long end = -1;
-        if ("weeks".equals(timeString)) end = TimeTool.weeksInMilis(time) + System.currentTimeMillis();
-        else if ("days".equals(timeString)) end = TimeTool.daysInMilis(time) + System.currentTimeMillis();
-        else if ("hours".equals(timeString)) end = TimeTool.hoursInMilis(time) + System.currentTimeMillis();
-        else if ("minutes".equals(timeString)) end = TimeTool.minutesInMilis(time) + System.currentTimeMillis();
+        if ("weeks".equals(timeString)) end = TimeTool.weeksInMillis(time) + System.currentTimeMillis();
+        else if ("days".equals(timeString)) end = TimeTool.daysInMillis(time) + System.currentTimeMillis();
+        else if ("hours".equals(timeString)) end = TimeTool.hoursInMillis(time) + System.currentTimeMillis();
+        else if ("minutes".equals(timeString)) end = TimeTool.minutesInMillis(time) + System.currentTimeMillis();
         Document document = new Document("player", player)
                 .append("creator", creator)
                 .append("reason", reason)

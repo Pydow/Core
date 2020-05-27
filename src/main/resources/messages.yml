@@ -148,3 +148,22 @@ ban-screen: "&eDu wurdest gebannt. Grund: &7[0]\n&eID: &7[1] &eVerbleibende Zeit
 chat-muted-info: "&cDu wurdest aus dem Chat gebannt."
 chat-muted-reason: "&cGrund: &7[0]"
 chat-muted-time: "&cVerbleibende Zeit: &7[0]"
+
+
+# -=- WarpSystem -=-
+warp-teleported: "&aDu wurdest zu &e[0] &ateleportiert."
+
+# /delwarp
+warp-deleted: "&aDer Warp wurde entfernt."
+delwarp-usage: "Nutze: &e/delwarp <Warp>"
+
+# /setwarp
+warp-set: "&aDer Warp &e[0] &awurde gesetzt."
+setwarp-usage: "Nutze: &e/setwarp <Warp>"
+
+# /warp
+warp-usage: "Nutze: &e/warp <Warp>"
+
+# /warps
+warps-title: "Warps"
+warps-content: ""

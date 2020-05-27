@@ -7,6 +7,10 @@ import net.lldv.pydow.core.commands.*;
 import net.lldv.pydow.core.components.database.MongoDB;
 import net.lldv.pydow.core.components.elements.punishsystem.commands.*;
 import net.lldv.pydow.core.components.elements.punishsystem.listener.PunishListener;
+import net.lldv.pydow.core.components.elements.warpsystem.commands.DelwarpCommand;
+import net.lldv.pydow.core.components.elements.warpsystem.commands.SetwarpCommand;
+import net.lldv.pydow.core.components.elements.warpsystem.commands.WarpCommand;
+import net.lldv.pydow.core.components.elements.warpsystem.commands.WarpsCommand;
 import net.lldv.pydow.core.components.language.Language;
 import net.lldv.pydow.core.components.tools.TimeTool;
 import net.lldv.pydow.core.listener.PlayerListener;
@@ -30,6 +34,9 @@ public class Core extends PluginBase {
         new CoreAPI().loadAPI();
         new TimeTool().init();
         MongoDB.connect(this);
+        getServer().getScheduler().scheduleDelayedTask(this, () -> {
+            CoreAPI.getWarpHandler().cacheAllWarps();
+        }, 40, true);
     }
 
     public void registerCommands() {
@@ -67,6 +74,11 @@ public class Core extends PluginBase {
         cr.register(this, new GetbanCommand(this));
         cr.register(this, new GetmuteCommand(this));
         cr.register(this, new HistoryCommand(this));
+
+        cr.register(this, new DelwarpCommand(this));
+        cr.register(this, new SetwarpCommand(this));
+        cr.register(this, new WarpCommand(this));
+        cr.register(this, new WarpsCommand(this));
     }
 
     public static Core getInstance() {
