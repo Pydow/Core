@@ -5,6 +5,8 @@ import cn.nukkit.registry.CommandRegistry;
 import net.lldv.pydow.core.api.CoreAPI;
 import net.lldv.pydow.core.commands.*;
 import net.lldv.pydow.core.components.database.MongoDB;
+import net.lldv.pydow.core.components.elements.homesystem.commands.HomeCommand;
+import net.lldv.pydow.core.components.elements.homesystem.commands.HomesCommand;
 import net.lldv.pydow.core.components.elements.punishsystem.commands.*;
 import net.lldv.pydow.core.components.elements.punishsystem.listener.PunishListener;
 import net.lldv.pydow.core.components.elements.warpsystem.commands.DelwarpCommand;
@@ -79,6 +81,9 @@ public class Core extends PluginBase {
         cr.register(this, new SetwarpCommand(this));
         cr.register(this, new WarpCommand(this));
         cr.register(this, new WarpsCommand(this));
+
+        cr.register(this, new HomeCommand(this));
+        cr.register(this, new HomesCommand(this));
     }
 
     public static Core getInstance() {

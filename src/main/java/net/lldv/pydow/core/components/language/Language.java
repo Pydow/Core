@@ -35,7 +35,7 @@ public class Language {
         return message;
     }
 
-    public static String getAndReplaceNoPrefix(String key, Object... replacements) {
+    public static String getAndReplaceNP(String key, Object... replacements) {
         String message = getNoPrefix(key);
         int i = 0;
         for (Object replacement : replacements) {

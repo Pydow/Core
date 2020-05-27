@@ -32,8 +32,8 @@ public class MsgCommand extends PluginCommand<Core> {
                 }
                 String message = "";
                 for (int i = 1; i < args.length; i++) message = message + args[i] + " ";
-                player.sendMessage(Language.getAndReplaceNoPrefix("msg-to", message, player.getDisplayName(), target.getDisplayName()));
-                target.sendMessage(Language.getAndReplaceNoPrefix("msg-from", message, player.getDisplayName(), target.getDisplayName()));
+                player.sendMessage(Language.getAndReplaceNP("msg-to", message, player.getDisplayName(), target.getDisplayName()));
+                target.sendMessage(Language.getAndReplaceNP("msg-from", message, player.getDisplayName(), target.getDisplayName()));
                 if (CoreData.reply.containsKey(player) || CoreData.reply.containsKey(target)) {
                     CoreData.reply.remove(player);
                     CoreData.reply.remove(target);

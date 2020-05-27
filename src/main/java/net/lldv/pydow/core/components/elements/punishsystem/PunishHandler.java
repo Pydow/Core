@@ -38,7 +38,7 @@ public class PunishHandler {
         MongoDB.getBanCollection().insertOne(document);
         Server.getInstance().getPluginManager().callEvent(new PlayerBanEvent(null, player, creator, reason, id, date, timeString, time));
         Player online = Server.getInstance().getPlayer(player);
-        if (online != null) online.kick(Language.getAndReplaceNoPrefix("ban-screen", reason, id, TimeTool.durationInString(end)), false);
+        if (online != null) online.kick(Language.getAndReplaceNP("ban-screen", reason, id, TimeTool.durationInString(end)), false);
         createBanHistory(new Punishment(player, id, reason, creator, date, end));
     }
 

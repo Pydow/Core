@@ -21,7 +21,7 @@ public class TeamchatCommand extends PluginCommand<Core> {
             if (args.length >= 1) {
                 String text = String.join(" ", args);
                 Server.getInstance().getOnlinePlayers().forEach((uuid, player) -> {
-                    if (player.hasPermission("pydow.core.command.teamchat")) player.sendMessage(Language.getAndReplaceNoPrefix("teamchat", sender.getName(), text));
+                    if (player.hasPermission("pydow.core.command.teamchat")) player.sendMessage(Language.getAndReplaceNP("teamchat", sender.getName(), text));
                 });
             } else sender.sendMessage(Language.getAndReplace("teamchat-usage"));
         } else sender.sendMessage(Language.getAndReplace("no-permission"));

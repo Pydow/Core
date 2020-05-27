@@ -23,8 +23,8 @@ public class WarpsCommand extends PluginCommand<Core> {
         if (sender instanceof Player) {
             Player player = (Player) sender;
             SimpleForm.SimpleFormBuilder form = Form.simple()
-                    .title(Language.getAndReplaceNoPrefix("warps-title"))
-                    .content(Language.getAndReplaceNoPrefix("warps-content"))
+                    .title(Language.getAndReplaceNP("warps-title"))
+                    .content(Language.getAndReplaceNP("warps-content"))
                     .onSubmit((formPlayer, response) -> {
                         String text = response.getButton().getButtonText();
                         Warp warp = CoreAPI.getWarpHandler().cachedWarps.get(text);

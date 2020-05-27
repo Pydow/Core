@@ -14,7 +14,7 @@ public class MongoDB {
 
     private static MongoClient mongoClient;
     private static MongoDatabase mongoDatabase;
-    private static MongoCollection<Document> banCollection, muteCollection, banhistoryCollection, mutehistoryCollection;
+    private static MongoCollection<Document> banCollection, muteCollection, banhistoryCollection, mutehistoryCollection, homeCollection;
 
     public static void connect(Core server) {
         CompletableFuture.runAsync(() -> {
@@ -26,6 +26,7 @@ public class MongoDB {
             muteCollection = mongoDatabase.getCollection("mutes");
             banhistoryCollection = mongoDatabase.getCollection("banhistory");
             mutehistoryCollection = mongoDatabase.getCollection("mutehistory");
+            homeCollection = mongoDatabase.getCollection("homes");
             server.getLogger().info("[MongoClient] Connection opened.");
         });
     }
@@ -54,4 +55,7 @@ public class MongoDB {
         return mutehistoryCollection;
     }
 
+    public static MongoCollection<Document> getHomeCollection() {
+        return homeCollection;
+    }
 }

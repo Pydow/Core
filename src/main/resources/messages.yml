@@ -97,6 +97,27 @@ player-joined: "§8» §e[0] §7hat den Server betreten."
 player-quit: "§8» §e[0] §7hat den Server verlassen."
 
 
+# -=- HomeSystem -=-
+homeui-title: "Home-Verwaltung"
+homeui-content: "Hier kannst du ganz einfach deine Homes erstellen, entfernen oder dich zu ihnen teleportieren."
+home-homes-button: "§8» §8Deine Homes"
+home-create-button: "§8» §aHome setzen"
+home-delete-button: "§8» §cHome entfernen"
+
+homeui-homes-title: "Deine Homes"
+homeui-homes-content: ""
+
+homeui-create-title: "Home erstellen"
+homeui-create-content: "Bitte gebe einen Namen an."
+
+homeui-delete-title: "Home entfernen"
+homeui-delete-content: "Klicke einer deiner Homes an, um ihn entfernen zu lassen."
+
+home-teleported: "&aDu wurdest zu deinem Home &e[0] &ateleportiert."
+home-created: "&aDu hast das Home &e[0] &agesetzt."
+home-deleted: "&aDas Home &e[0] &awurde entfernt."
+
+
 # -=- BanSystem -=-
 
 # /ban

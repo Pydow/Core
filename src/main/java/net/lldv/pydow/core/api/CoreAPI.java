@@ -61,6 +61,15 @@ public class CoreAPI {
         return dateFormat.format(now);
     }
 
+    public static void playSound(Player player, Sound sound) {
+        PlaySoundPacket packet = new PlaySoundPacket();
+        packet.setSound(sound.getSound());
+        packet.setPosition(Vector3f.from(new Double(player.getLocation().getX()).intValue(), new Double(player.getLocation().getY()).intValue(), new Double(player.getLocation().getZ()).intValue()));
+        packet.setVolume(1.0F);
+        packet.setPitch(1.0F);
+        player.sendPacket(packet);
+    }
+
     public static void playSound(Player player, Sound sound, float volume, float pitch) {
         PlaySoundPacket packet = new PlaySoundPacket();
         packet.setSound(sound.getSound());

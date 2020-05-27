@@ -25,7 +25,7 @@ public class PunishListener implements Listener {
                         punishment.unBan(event.getLoginData().getName());
                         return;
                     }
-                    event.setKickMessage(Language.getAndReplaceNoPrefix("ban-screen", ban.getReason(), ban.getId(), TimeTool.durationInString(ban.getTime())));
+                    event.setKickMessage(Language.getAndReplaceNP("ban-screen", ban.getReason(), ban.getId(), TimeTool.durationInString(ban.getTime())));
                     event.getLoginData().getSession().disconnect(event.getKickMessage());
                 } else if (punishment.isMuted(event.getLoginData().getName())) {
                     Punishment mute = punishment.getPunishment(event.getLoginData().getName(), "mute");
